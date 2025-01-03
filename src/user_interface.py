@@ -1,6 +1,5 @@
 # Handles user interaction, including input prompts and displaying results.
 
-
 from game_engine import GameAction
 
 def get_user_action():
