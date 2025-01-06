@@ -53,7 +53,6 @@ Primero, se analizarán las propiedades del entorno para poder escoger el agente
 
 ## 2. Identificación del tipo de agente y estructura
 
-
 ### Tipo de agente seleccionado
 
 En este caso, el tipo de agente adecuado para el juego **Piedra, Papel, Tijera** es un **agente reflexivo basado en modelos**. Este agente utiliza un modelo interno para crear un historial de acciones del usuario y así poder predecir sus movimientos futuros. La elección de este tipo de agente permite tomar decisiones informadas para tratar de mejorar su desempeño en el juego.
@@ -68,16 +67,18 @@ A continuación se presenta un diagrama que ilustra la estructura del agente bas
 
 ### Explicación de los componentes del agente
 
-1. **Estado:** En esta parte se almacena el historial de acciones del usuario y del agente. Este es esencial para que el agente pueda analizar patrones y realizar predicciones basadas en datos históricos.
+1. **Estado:** En esta parte se almacena el historial de acciones del usuario y del agente. Este es esencial para que el agente pueda analizar patrones y realizar predicciones basadas en datos históricos. || **En el código:** El historial de acciones del usuario se almacena en user_history.
 
-2. **Evolución del mundo:** Este otro componente actualiza el estado del agente utilizando las acciones previas del usuario. Permite que el agente adapte su modelo interno en tiempo real.
+2. **Evolución del mundo:** Este otro componente actualiza el estado del agente utilizando las acciones previas del usuario. Permite que el agente adapte su modelo interno en tiempo real. || **En el código:** La función update_user_history() actualiza el historial del usuario, asegurando que solo se conserven las últimas 20 acciones.
 
-3. **Qué hacen mis acciones:** Este módulo calcula la acción óptima a tomar en base al historial y las reglas del juego. Por ejemplo, si el usuario tiende a repetir el uso de Piedra, este componente contrarrestará la acción de manera efectiva.
+3. **Qué hacen mis acciones:** Este módulo calcula la acción óptima a tomar en base al historial y las reglas del juego. Por ejemplo, si el usuario tiende a repetir el uso de Piedra, este componente contrarrestará la acción de manera efectiva. || **En el código:** La función get_computer_action() calcula la acción óptima del agente basándose en el historial del usuario y las reglas del juego.
 
-4. **Reglas de condición-acción:** Define las reglas del juego (victoria, derrota, empate) para guiar al agente en la selección de la acción adecuada.
+4. **Reglas de condición-acción:** Define las reglas del juego (victoria, derrota, empate) para guiar al agente en la selección de la acción adecuada. || **En el código:** Aunque no están directamente en agent.py, las reglas se aplican dentro de get_computer_action() para contrarrestar las acciones del usuario.
 
-5. **Sensores:** Captan la entrada del usuario (su acción actual) y el estado del entorno.
+5. **Sensores:** Captan la entrada del usuario (su acción actual) y el estado del entorno. || **En el código:** Las entradas del usuario se captan en user_interface.py y se utilizan en update_user_history().
 
-6. **Actuadores:** Llevan a cabo la acción elegida por el agente y la devuelven al entorno.
+6. **Actuadores:** Llevan a cabo la acción elegida por el agente y la devuelven al entorno. || **En el código:** La decisión calculada por get_computer_action() representa la acción del agente en el entorno.
 
 Este modelo asegura que el agente pueda aprender y adaptarse a las estrategias del adversario, mejorando su capacidad para competir de manera efectiva.
+
+---
