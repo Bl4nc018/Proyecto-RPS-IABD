@@ -1,13 +1,20 @@
 # Piedra, Papel, Tijera (RPS)
 
+En repositorio se recoge un proyecto compuesto por una implementación ampliada del juego Piedra, Papel, Tijera, incluyendo las variantes Lagarto y Spock. Está desarrollado en Python, empleando un agente reflexivo basado en modelos que analiza el historial de jugadas para tratar de anticiparse al usuario. La estructura del código es modular, complementada con tests automatizados para garantizar su funcionalidad mediante el empleo de pytest.
+
+![Python Version](https://img.shields.io/badge/Python-3.12-blue)
+![Pytest](https://img.shields.io/badge/tested%20with-pytest-yellow)
+
 ---
 
 ## Índice
 
-1. [Especificación del entorno de tareas](#1-especificación-del-entorno-de-tareas)  
-2. [Identificación del tipo de agente y estructura](#2-identificación-del-tipo-de-agente-y-estructura)  
+1. [Especificación del entorno de tareas](#1-especificación-del-entorno-de-tareas)
+2. [Identificación del tipo de agente y estructura](#2-identificación-del-tipo-de-agente-y-estructura)
+3. [Instalación y uso del repositorio](#3-instalación-y-uso-del-repositorio)
 
 ---
+
 
 ## 1. Especificación del entorno de tareas
 
