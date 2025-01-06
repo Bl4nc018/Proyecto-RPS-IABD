@@ -82,3 +82,51 @@ A continuación se presenta un diagrama que ilustra la estructura del agente bas
 Este modelo asegura que el agente pueda aprender y adaptarse a las estrategias del adversario, mejorando su capacidad para competir de manera efectiva.
 
 ---
+
+## 3. Instalación y uso del repositorio
+
+### Pasos para la instalación:
+
+1. **Clonar el repositorio**:
+
+   ```sh
+   git clone https://github.com/Bl4nc018/Proyecto-RPS-IABD.git
+   cd Proyecto-RPS-IABD
+   ```
+   
+2. **Crear y activar un entorno virtual (opcional, recomendado)**:
+
+   ```sh
+   python3 -m venv venv
+   source venv/bin/activate  # En Windows: venv\Scripts\activate
+   ```
+  
+    - **Una vez en el entorno, instalar las dependencias necesarias. (Procurar tener pip actualizado e instalar los requerimientos):**
+  
+      ```sh
+      pip install --upgrade pip
+      pip install -r requirements.txt
+      ```
+
+3. **Ejecutar el juego. Para iniciarlo, deberás ejecutar lo siguiente en el archivo principal:**
+ 
+    ```sh
+    python src/main.py
+    ```
+    
+4. **Ejecutar los test (opcional) Si deseas verificar que todo funciona, utiliza pytest:**
+
+    ```sh
+    pytest
+    ```
+
+---
+
+### Desarrollado por:
+
+<p align="left">
+   <a href="https://github.com/Bl4nc018">
+      <img src="https://avatars.githubusercontent.com/u/92156488?s=400&u=1302f75511bad4df69803bf7b66443a1a8364b60&v=4" width=115><br>
+      <sub>Ania</sub>
+   </a>
+</p>
