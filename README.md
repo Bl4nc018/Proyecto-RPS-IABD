@@ -15,32 +15,31 @@ En repositorio se recoge un proyecto compuesto por una implementación ampliada 
 
 ---
 
-
 ## 1. Especificación del entorno de tareas
 
 Primero, se analizarán las propiedades del entorno para poder escoger el agente adecuado. En la siguiente tabla se resumen las características del entorno:
 
-| **Propiedad**         | **Descripción breve**                                                                                    |
-|-----------------------|---------------------------------------------------------------------------------------------------------|
-| **Observable**        | **Completamente observable**: El agente conoce toda la información relevante del entorno en cada ronda. |
-| **Agentes**           | **Multi-agente**: El juego involucra dos jugadores (máquina y humano, o dos máquinas)                   |
-| **Adversarial**       | **Adversarial**: El éxito de un jugador depende directamente del fallo del otro                         |
-| **Determinista**      | **Determinista**: Las acciones de ambos jugadores determinan el resultado de la ronda sin incerteza.    |
-| **Secuencial**        | **Secuencial**: El agente depende del historial acumulado, el que conecta las decisiones entre rondas.  |
-| **Estático**          | **Estático**: El estado del entorno no cambia mientras el agente no toma decisiones.                    |
-| **Discreto**          | **Discreto**: Las acciones y estados posibles son finitos y bien definidos (piedra, papel, tijera)      |
-| **Conocido**          | **Conocido**: Las reglas y resultados del juego son completamente comprensibles y especificados.        |
+| **Propiedad**         | **Descripción breve**                                                                                     |
+|-----------------------|-----------------------------------------------------------------------------------------------------------|
+| **Observable**        | **Parcialmente observable**: El agente no conoce toda la información relevante del entorno en cada ronda. |
+| **Agentes**           | **Multi-agente**: El juego involucra dos jugadores (máquina y usuario).                                   |
+| **Adversarial**       | **Adversarial**: El éxito de un jugador depende directamente del fallo del otro.                          |
+| **Determinista**      | **No determinista**: Las acciones de los jugadores pueden generar resultados inciertos.                   |
+| **Secuencial**        | **Secuencial**: El agente depende del historial acumulado; el que conecta las decisiones entre rondas.    |
+| **Estático**          | **Estático**: El estado del entorno no cambia mientras el agente no tome decisiones.                      |
+| **Discreto**          | **Discreto**: Las acciones y estados posibles son finitos y definidos (piedra, papel, tijera).            |
+| **Conocido**          | **Conocido**: Las reglas y resultados del juego son comprensibles y especificados.                        |
 
 
 ### Justificación de las propiedades 
 
-1. **Observable**: El entorno es totalmente observable porque el agente tiene acceso a toda la información relevante en cada momento, como la última acción del oponente y las reglas del juego. La incertidumbre sobre la próxima acción no implica falta de información observable, sino la naturaleza competitiva del juego.
+1. **Observable**: El entorno es parcialmente observable porque el agente carece de acceso a toda la información relevante en cada momento, como la próxima acción del oponente, pese a que cada agente si que conoce las reglas del juego y todas las posibilidades.
 
-2. **Agentes**: El juego es claramente un entorno multi-agente, ya que las decisiones de cada jugador afectan directamente al resultado final. La interacción es competitiva, dado que el éxito de un jugador implica el fallo de otro.
+2. **Agentes**: El juego es claramente un entorno multi-agente, ya que las decisiones de cada jugador afectan directamente al resultado final. La interacción entre ambos es competitiva puesto que el éxito de un jugador implica el fallo de otro.
 
-3. **Adversarial**: El juego es adversarial porque los objetivos de los dos agentes están en conflicto: el éxito de uno es el fallo del otro. Esto hace que el agente deba analizar estrategias que maximizan su probabilidad de éxito.
+3. **Adversarial**: El entorno es adversarial porque los objetivos de los dos agentes están en conflicto: el éxito de uno es el fallo del otro.
 
-4. **Determinista**: El juego es determinista, dado que la combinación de acciones (piedra, papel, tijera) tiene un resultado fijo predefinido. No hay elementos de aleatoriedad inherente en las reglas del juego.
+4. **Determinista**: El entorno es no determinista pues, aunque las reglas del juego son claras, las acciones de los jugadores generan cierta incertidumbre. Por ejemplo, la acción del oponente no puede ser predecida con certeza, introduciendo variabilidad en el resultado.
 
 5. **Secuencial**: El entorno es secuencial porque las decisiones del agente están influídas por el historial acumulado de las rondas previas. El modelo interno emplea estas observaciones para predecir futuras acciones del oponente y mejorar el rendimiento del agente.
 
