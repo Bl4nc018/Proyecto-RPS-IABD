@@ -62,7 +62,7 @@ En este caso, el tipo de agente adecuado para el juego **Piedra, Papel, Tijera**
 
 A continuación se presenta un diagrama que ilustra la estructura del agente basado en modelos para el juego:
 
-![](./diagrama_agente.png)
+![](./docs/diagrama_agente.png)
 
 
 ### Explicación de los componentes del agente
