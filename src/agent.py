@@ -12,12 +12,15 @@ def get_computer_action():
     if len(user_history) < 5: computer_selection = random.randint(0, len(GameAction) - 1)
     else:
         most_common_action = max(set(user_history), key=user_history.count) # Obtains the most frequent action from the last 20 entries.
-        counter_actions = { # Then it tries to counter it:
-            GameAction.Rock: GameAction.Paper,
-            GameAction.Paper: GameAction.Scissors,
-            GameAction.Scissors: GameAction.Rock}
+        counter_actions = { # Dictionary filled with counteractions for each possible user action.
+            GameAction.Rock: [GameAction.Paper, GameAction.Spock],
+            GameAction.Paper: [GameAction.Scissors, GameAction.Lizard],
+            GameAction.Scissors: [GameAction.Rock, GameAction.Spock],
+            GameAction.Lizard: [GameAction.Rock, GameAction.Scissors],
+            GameAction.Spock: [GameAction.Paper, GameAction.Lizard],}
         
-        computer_selection = counter_actions[most_common_action].value
+        # Now the variable selects a random counteraction from the available options.
+        computer_selection = random.choice(counter_actions[most_common_action]).value
 
     computer_action = GameAction(computer_selection)
     print(f"Computer picked {computer_action.name}.")
